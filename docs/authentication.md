@@ -20,7 +20,7 @@ Include your API key in the `Authorization` header using the Bearer scheme:
 ### cURL Example
 
 ```bash
-curl -X POST https://your-domain.com/api/generate-video-data \
+curl -X POST https://origid.ai/api/generate-video-data \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   -H "Content-Type: application/json" \
   -d '{"idea": "Your video idea"}'
@@ -29,7 +29,7 @@ curl -X POST https://your-domain.com/api/generate-video-data \
 ### JavaScript/TypeScript Example
 
 ```typescript
-const response = await fetch('https://your-domain.com/api/generate-video-data', {
+const response = await fetch('https://origid.ai/api/generate-video-data', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -60,7 +60,7 @@ data = {
 }
 
 response = requests.post(
-    'https://your-domain.com/api/generate-video-data',
+    'https://origid.ai/api/generate-video-data',
     headers=headers,
     json=data
 )
