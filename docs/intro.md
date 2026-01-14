@@ -2,7 +2,6 @@
 slug: /
 title: Introduction
 ---
-
 # Welcome to OrigID API
 
 Protect and verify your audio/video content with **OrigID's Watermarking API**. Add invisible watermarks for content authenticity and provenance tracking.
@@ -12,7 +11,7 @@ Protect and verify your audio/video content with **OrigID's Watermarking API**. 
 To use the OrigID API, you'll need:
 
 1. **API Key**: Generate an API key from your [OrigID Settings](http://localhost:3000/settings/api)
-2. **Base URL**: `https://origid.ai` (or `http://localhost:3000` for development)
+2. **Base URL**: `https://app.origid.ai`
 3. **Authentication**: Include your API key in the `Authorization` header
 
 ## Quick Example

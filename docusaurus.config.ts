@@ -98,11 +98,11 @@ const config: Config = {
           items: [
             {
               label: 'Main App',
-              href: 'http://localhost:3000',
+              href: 'https://app.origid.com',
             },
             {
               label: 'Settings',
-              href: 'http://localhost:3000/settings/api',
+              href: 'https://app.origid.com/settings/api',
             },
           ],
         },

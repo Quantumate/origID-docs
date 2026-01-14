@@ -5,7 +5,7 @@ The OrigID API uses **Bearer token authentication**. You must include your API k
 ## Getting Your API Key
 
 1. Log in to your OrigID account
-2. Navigate to **Settings** → **API Keys** at [http://localhost:3000/settings/api](http://localhost:3000/settings/api)
+2. Navigate to **Settings** → **API Keys** at [https://app.adoriai/settings/api](http://localhost:3000/settings/api)
 3. Click **"Create API Key"**
 4. Give your key a descriptive name
 5. Choose permissions:
@@ -145,6 +145,7 @@ You can view all your API keys in the Settings page. For security, only the firs
 ### Deleting Keys
 
 To revoke an API key:
+
 1. Go to **Settings** → **API Keys**
 2. Click the delete icon next to the key
 3. Confirm deletion
@@ -157,10 +158,9 @@ Deleting an API key takes effect immediately. Any requests using that key will f
 
 API keys support granular permissions:
 
-| Permission | Access Level | Description |
-|------------|--------------|-------------|
-| **All** | Read & Write | Full access to all resources |
-| **Read Only** | Read | View-only access to resources |
+| Permission          | Access Level | Description                   |
+| ------------------- | ------------ | ----------------------------- |
+| **All**       | Read & Write | Full access to all resources  |
+| **Read Only** | Read         | View-only access to resources |
 
 You can view and modify key permissions in the Settings page.
-
