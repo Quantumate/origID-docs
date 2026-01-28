@@ -5,7 +5,7 @@ The OrigID API uses **Bearer token authentication**. You must include your API k
 ## Getting Your API Key
 
 1. Log in to your OrigID account
-2. Navigate to **Settings** → **API Keys** at [https://app.adoriai/settings/api](http://localhost:3000/settings/api)
+2. Navigate to **Settings** → **API Keys** at [https://app.origid.ai/settings/api](http://localhost:3000/settings/api)
 3. Click **"Create API Key"**
 4. Give your key a descriptive name
 5. Choose permissions:
@@ -20,7 +20,7 @@ Include your API key in the `Authorization` header using the Bearer scheme:
 ### cURL Example
 
 ```bash
-curl -X POST https://origid.ai/api/generate-video-data \
+curl -X POST https://app.origid.ai/api/generate-video-data \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   -H "Content-Type: application/json" \
   -d '{"idea": "Your video idea"}'
@@ -29,7 +29,7 @@ curl -X POST https://origid.ai/api/generate-video-data \
 ### JavaScript/TypeScript Example
 
 ```typescript
-const response = await fetch('https://origid.ai/api/generate-video-data', {
+const response = await fetch('https://app.origid.ai/api/generate-video-data', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -60,7 +60,7 @@ data = {
 }
 
 response = requests.post(
-    'https://origid.ai/api/generate-video-data',
+    'https://app.origid.ai/api/generate-video-data',
     headers=headers,
     json=data
 )

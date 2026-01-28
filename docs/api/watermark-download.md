@@ -91,7 +91,7 @@ The watermarked file is named with a `_wm` suffix:
 ### cURL
 
 ```bash
-curl -X GET "https://origid.ai/api/watermark/download/9171cdcb49e640c5b2d6d22d04456f7a?filename=audio.wav" \
+curl -X GET "https://app.origid.ai/api/watermark/download/9171cdcb49e640c5b2d6d22d04456f7a?filename=audio.wav" \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   --output audio_wm.wav
 ```
@@ -101,7 +101,7 @@ curl -X GET "https://origid.ai/api/watermark/download/9171cdcb49e640c5b2d6d22d04
 ```javascript
 async function downloadWatermarkedFile(taskId, filename) {
   const response = await fetch(
-    `https://origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
+    `https://app.origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
     {
       headers: {
         'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -136,7 +136,7 @@ await downloadWatermarkedFile('9171cdcb49e640c5b2d6d22d04456f7a', 'audio.wav');
 ```javascript
 async function getWatermarkedBlob(taskId, filename) {
   const response = await fetch(
-    `https://origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
+    `https://app.origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
     {
       headers: {
         'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -171,7 +171,7 @@ def download_watermarked_file(task_id, filename, output_path, api_key):
     }
     
     params = {'filename': filename}
-    url = f'https://origid.ai/api/watermark/download/{task_id}'
+    url = f'https://app.origid.ai/api/watermark/download/{task_id}'
     
     response = requests.get(url, headers=headers, params=params, stream=True)
     
@@ -202,7 +202,7 @@ import fetch from 'node-fetch';
 
 async function downloadToFile(taskId, filename, outputPath) {
   const response = await fetch(
-    `https://origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
+    `https://app.origid.ai/api/watermark/download/${taskId}?filename=${encodeURIComponent(filename)}`,
     {
       headers: {
         'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',

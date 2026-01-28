@@ -19,7 +19,7 @@ To use the OrigID API, you'll need:
 ### Watermark a File
 
 ```bash
-curl -X POST https://origid.ai/api/watermark/encode \
+curl -X POST https://app.origid.ai/api/watermark/encode \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   -F "file=@/path/to/audio.wav"
 ```
@@ -27,7 +27,7 @@ curl -X POST https://origid.ai/api/watermark/encode \
 ### Decode a Watermark
 
 ```bash
-curl -X POST https://origid.ai/api/watermark/decode \
+curl -X POST https://app.origid.ai/api/watermark/decode \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   -F "file=@/path/to/watermarked_audio.wav"
 ```

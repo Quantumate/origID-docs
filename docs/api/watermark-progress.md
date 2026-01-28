@@ -105,7 +105,7 @@ Authorization: Bearer origid_xxxxxxxxxxxxxxxx
 
 ```bash
 # Poll for progress
-curl -X GET "https://origid.ai/api/watermark/progress/9171cdcb49e640c5b2d6d22d04456f7a?filename=audio.wav" \
+curl -X GET "https://app.origid.ai/api/watermark/progress/9171cdcb49e640c5b2d6d22d04456f7a?filename=audio.wav" \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx"
 ```
 
@@ -114,7 +114,7 @@ curl -X GET "https://origid.ai/api/watermark/progress/9171cdcb49e640c5b2d6d22d04
 ```javascript
 async function checkProgress(taskId, filename) {
   const response = await fetch(
-    `https://origid.ai/api/watermark/progress/${taskId}?filename=${encodeURIComponent(filename)}`,
+    `https://app.origid.ai/api/watermark/progress/${taskId}?filename=${encodeURIComponent(filename)}`,
     {
       headers: {
         'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -135,7 +135,7 @@ async function checkProgress(taskId, filename) {
 async function pollUntilComplete(taskId, filename, onProgress) {
   const poll = async () => {
     const response = await fetch(
-      `https://origid.ai/api/watermark/progress/${taskId}?filename=${encodeURIComponent(filename)}`,
+      `https://app.origid.ai/api/watermark/progress/${taskId}?filename=${encodeURIComponent(filename)}`,
       {
         headers: {
           'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -186,7 +186,7 @@ def poll_until_complete(task_id, filename, api_key):
         'Authorization': f'Bearer {api_key}',
     }
     
-    url = f'https://origid.ai/api/watermark/progress/{task_id}'
+    url = f'https://app.origid.ai/api/watermark/progress/{task_id}'
     params = {'filename': filename}
     
     while True:

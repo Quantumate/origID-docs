@@ -97,7 +97,7 @@ Send as `multipart/form-data`:
 ### cURL
 
 ```bash
-curl -X POST https://origid.ai/api/watermark/decode \
+curl -X POST https://app.origid.ai/api/watermark/decode \
   -H "Authorization: Bearer origid_xxxxxxxxxxxxxxxx" \
   -F "file=@/path/to/watermarked_audio.wav"
 ```
@@ -109,7 +109,7 @@ const file = document.querySelector('input[type="file"]').files[0];
 const formData = new FormData();
 formData.append('file', file);
 
-const response = await fetch('https://origid.ai/api/watermark/decode', {
+const response = await fetch('https://app.origid.ai/api/watermark/decode', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -141,7 +141,7 @@ files = {
 }
 
 response = requests.post(
-    'https://origid.ai/api/watermark/decode',
+    'https://app.origid.ai/api/watermark/decode',
     headers=headers,
     files=files
 )
