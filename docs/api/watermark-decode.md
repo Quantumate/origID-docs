@@ -231,6 +231,6 @@ The uploaded file is temporarily stored for decoding and deleted immediately aft
 
 ## Next Steps
 
-- [Encode Watermark](/api/watermark-encode)
+- [Encode Watermark](/api/watermark-sign)
 - [Check Encoding Progress](/api/watermark-progress)
 - [Download Watermarked File](/api/watermark-download)

@@ -69,7 +69,7 @@ Learn more in the [Authentication](/authentication) section.
 ## What's Next?
 
 - [Authentication](/authentication) - Learn how to authenticate your requests
-- [Encode Watermark](/api/watermark-encode) - Add watermarks to files
+- [Encode Watermark](/api/watermark-sign) - Add watermarks to files
 - [Decode Watermark](/api/watermark-decode) - Verify content authenticity
 - [Check Progress](/api/watermark-progress) - Monitor encoding status
 - [Download File](/api/watermark-download) - Get watermarked files

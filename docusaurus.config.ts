@@ -89,7 +89,7 @@ const config: Config = {
             },
             {
               label: 'Watermark API',
-              to: '/api/watermark-encode',
+              to: '/api/watermark-sign',
             },
           ],
         },

@@ -11,7 +11,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'api/watermark-encode',
+          id: 'api/watermark-sign',
           label: 'Encode Watermark',
         },
         {

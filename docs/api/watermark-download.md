@@ -339,6 +339,6 @@ Always use HTTPS for downloads to ensure file integrity and security during tran
 
 ## Next Steps
 
-- [Encode Watermark](/api/watermark-encode)
+- [Encode Watermark](/api/watermark-sign)
 - [Check Encoding Progress](/api/watermark-progress)
 - [Decode Watermark](/api/watermark-decode)
