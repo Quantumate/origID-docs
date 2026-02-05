@@ -39,6 +39,52 @@ Send as JSON:
 - **Audio**: `.wav`, `.mp3`, `.m4a`, `.flac`
 - **Video**: `.mp4`, `.mov`, `.avi`, `.mkv`
 
+### Filename Rules
+
+:::caution Filename Requirements
+Filenames with special characters may cause the watermarking to fail silently. For best results, sanitize filenames before upload.
+:::
+
+**Allowed characters:**
+
+- Letters: `a-z`, `A-Z`
+- Numbers: `0-9`
+- Underscore: `_`
+- Hyphen: `-`
+- Period: `.` (for extension only)
+
+**Characters to avoid:**
+
+- Spaces (replace with `_`)
+- Parentheses: `()`, `[]`, `{}`
+- Special characters: `@`, `#`, `$`, `%`, `&`, `*`, etc.
+
+**Example sanitization:**
+
+```
+Adori AI Video (7).mp4  →  Adori_AI_Video_7.mp4
+My File [Final].mp3    →  My_File_Final.mp3
+```
+
+**JavaScript sanitization function:**
+
+```javascript
+function sanitizeFilename(filename) {
+  const lastDot = filename.lastIndexOf('.')
+  const name = lastDot > 0 ? filename.substring(0, lastDot) : filename
+  const ext = lastDot > 0 ? filename.substring(lastDot) : ''
+
+  const sanitized = name
+    .replace(/\s+/g, '_') // Spaces → underscores
+    .replace(/[()[\]{}]/g, '') // Remove brackets
+    .replace(/[^a-zA-Z0-9_-]/g, '_') // Other special chars → underscore
+    .replace(/_+/g, '_') // Collapse multiple underscores
+    .replace(/^_|_$/g, '') // Remove leading/trailing
+
+  return sanitized + ext
+}
+```
+
 ## Response
 
 ### Success Response (200 OK)
@@ -89,7 +135,28 @@ Send as JSON:
 After receiving the response, upload your file directly to S3 using **multipart/form-data**:
 
 :::warning Field Order Matters
-You must include all `fields` BEFORE the file. The file must be the **last** field in the form data.
+S3 presigned POST is **strict about field order**. You must:
+
+1. Include all `fields` BEFORE the file
+2. The file must be the **last** field in the form data
+3. Follow the exact field order below
+   :::
+
+**Required Field Order:**
+
+```
+1. x-amz-meta-uuid
+2. x-amz-meta-origid
+3. key
+4. AWSAccessKeyId
+5. x-amz-security-token
+6. policy
+7. signature
+8. file (MUST BE LAST)
+```
+
+:::tip Why Order Matters
+S3 validates the `policy` signature against the form data. If fields are in the wrong order, the upload may succeed (204) but the file may not be processed correctly by the Lambda trigger.
 :::
 
 ### cURL
