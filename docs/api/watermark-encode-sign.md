@@ -5,7 +5,7 @@ Request a presigned URL to upload your audio/video files directly to storage. Th
 ## Endpoint
 
 ```
-POST /api/watermark/sign
+POST /api/watermark/encode/sign
 ```
 
 ## Authentication
@@ -177,7 +177,7 @@ curl -X POST "https://ai-authentication.s3.amazonaws.com/" \
 
 ```javascript
 // Step 1: Get upload URL
-const signResponse = await fetch('https://app.origid.ai/api/watermark/sign', {
+const signResponse = await fetch('https://app.origid.ai/api/watermark/encode/sign', {
   method: 'POST',
   headers: {
     Authorization: 'Bearer origid_xxxxxxxxxxxxxxxx',
@@ -224,7 +224,7 @@ headers = {
 }
 
 sign_response = requests.post(
-    'https://app.origid.ai/api/watermark/sign',
+    'https://app.origid.ai/api/watermark/encode/sign',
     headers=headers,
     json={
         'filename': 'video.mp4',
@@ -259,7 +259,7 @@ After uploading, watermarking starts automatically. Here's the full flow:
 │                    WATERMARKING WORKFLOW                     │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  1. POST /api/watermark/sign                                 │
+│  1. POST /api/watermark/encode/sign                          │
 │     Request: { filename, contentType }                       │
 │     Response: { uploadUrl, taskId, fields }                  │
 │                                                              │
@@ -285,7 +285,7 @@ async function watermarkFile(file) {
 
   // Step 1: Get upload URL
   console.log('Getting upload URL...')
-  const signRes = await fetch(`${BASE_URL}/api/watermark/sign`, {
+  const signRes = await fetch(`${BASE_URL}/api/watermark/encode/sign`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${API_KEY}`,
