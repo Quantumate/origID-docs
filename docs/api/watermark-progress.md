@@ -336,5 +336,5 @@ async function watermarkFile(file) {
 ## Next Steps
 
 - [Download Watermarked File](/api/watermark-download)
-- [Encode Watermark](/api/watermark-encode)
+- [Encode Watermark](/api/watermark-sign)
 - [Decode Watermark](/api/watermark-decode)
